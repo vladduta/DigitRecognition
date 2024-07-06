@@ -102,7 +102,6 @@ class MnistCNN(object):
         return np.argmax(result)
 
     def predict_on_image(self, path):
-        # Predict
         img = cv2.imread(path)
         if img is None:
             print(f"Error: could not read image from path: {path}")
@@ -110,7 +109,6 @@ class MnistCNN(object):
 
         digit = self.predict(img)
         if digit is not None:
-            # Show result
             print(f'Result: the image is a {digit}.')
             cv2.imshow('Input image', img)
             cv2.waitKey(0)
