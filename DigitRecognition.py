@@ -91,7 +91,8 @@ class MnistCNN(object):
 
         if len(input_img.shape) > 2:  # verificam daca imaginea de intrare are mai mult de 2 dimensiuni
             input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2GRAY)
-        input_img = cv2.resize(input_img, (self.img_rows, self.img_cols))
+            input_img = cv2.resize(input_img, (self.img_rows, self.img_cols))
+            input_img = cv2.bitwise_not(input_img)
 
         # Normalizeaza imaginea de intrare
         input_img = input_img.astype('float32')
